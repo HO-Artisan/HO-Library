@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "holib",
+  "version": "${version}",
+  "name": "HO-Library",
+  "description": "",
+  "authors": ["Chemiofitor"],
+  "contact": {
+    "repo": "https://github.com/HO-Artisan/HO-Library"
+  },
+  "license": "MIT",
+  "icon": "assets/holib/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "ho.artisan.holib.HOLibClient"
+    ],
+    "main": [
+      "ho.artisan.holib.HOLibMod"
+    ],
+    "fabric-datagen": [
+      "ho.artisan.holib.HOLibDataGen"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.3"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library"],
+      "update_checker": false
+    }
+  }
+}
