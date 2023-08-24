@@ -6,9 +6,9 @@ import net.minecraft.item.Items;
 import static ho.artisan.holib.HOLibMod.REGISTRAR;
 
 public class HOItemGroups {
-    public static final ItemGroup MAIN = REGISTRAR.createTab("main", Items.DIAMOND);
+    public static ItemGroup main;
 
     public static void register() {
-
+        main = REGISTRAR.createTab("main", Items.DIAMOND);
     }
 }

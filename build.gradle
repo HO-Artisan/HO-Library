@@ -28,7 +28,15 @@ sourceSets {
 }
 
 repositories {
-    maven { url "https://maven.terraformersmc.com/releases/" }
+    maven {
+        url = "https://maven.terraformersmc.com/releases/"
+    }
+    maven {
+        url = "https://maven.resourcefulbees.com/repository/maven-public/"
+    }
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
 }
 
 dependencies {
@@ -38,6 +46,10 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+    include modApi('teamreborn:energy:3.0.0') {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 processResources {

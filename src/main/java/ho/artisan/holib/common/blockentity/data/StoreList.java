@@ -19,11 +19,6 @@ public class StoreList implements SidedInventory {
         this.list = DefaultedList.ofSize(size, ItemStack.EMPTY);
     }
 
-    public StoreList() {
-        this.list = DefaultedList.of();
-    }
-
-
     @Override
     public int[] getAvailableSlots(Direction side) {
         return IntStream.range(0, list.size() - 1).toArray();

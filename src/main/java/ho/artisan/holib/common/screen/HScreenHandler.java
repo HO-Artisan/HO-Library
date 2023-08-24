@@ -9,22 +9,25 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class HScreenHandler extends ScreenHandler {
     private final StoreList storeList;
     public final DataList dataList;
 
-    public HScreenHandler(@NotNull ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, StoreList storeList, DataList dataList) {
+    public HScreenHandler(@NotNull ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, @Nullable StoreList storeList, DataList dataList) {
         super(type, syncId);
         this.storeList = storeList;
         this.dataList = dataList;
 
-        storeList.onOpen(playerInventory.player);
-
-        this.addProperties(dataList.delegate());
+        if (storeList != null) {
+            storeList.onOpen(playerInventory.player);
+            this.addSlots(storeList);
+        }
 
         this.addPlayerSlots(playerInventory);
-        this.addSlots(storeList);
+
+        this.addProperties(dataList.delegate());
     }
 
     @Override

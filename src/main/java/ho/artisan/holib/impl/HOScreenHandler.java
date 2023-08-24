@@ -6,6 +6,7 @@ import ho.artisan.holib.common.screen.HScreenHandler;
 import ho.artisan.holib.init.HOScreenHandlerTypes;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.slot.Slot;
+import org.jetbrains.annotations.Nullable;
 
 public class HOScreenHandler extends HScreenHandler {
 
@@ -13,7 +14,7 @@ public class HOScreenHandler extends HScreenHandler {
         super(HOScreenHandlerTypes.HO_SCREEN_HANDLER, syncId, playerInventory, new StoreList(9), new DataList(2));
     }
 
-    public HOScreenHandler(int syncId, PlayerInventory playerInventory, StoreList storeList, DataList dataList) {
+    public HOScreenHandler(int syncId, PlayerInventory playerInventory, @Nullable StoreList storeList, DataList dataList) {
         super(HOScreenHandlerTypes.HO_SCREEN_HANDLER, syncId, playerInventory, storeList, dataList);
     }
 

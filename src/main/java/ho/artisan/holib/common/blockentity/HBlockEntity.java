@@ -27,11 +27,10 @@ public abstract class HBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt) {
+    public void writeNbt(NbtCompound nbt) {
         this.write(nbt, false);
         super.writeNbt(nbt);
     }
-
 
     @Override
     public NbtCompound toInitialChunkDataNbt() {
