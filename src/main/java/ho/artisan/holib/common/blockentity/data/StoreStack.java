@@ -4,6 +4,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
@@ -88,5 +90,33 @@ public class StoreStack implements SidedInventory {
     @Override
     public void clear() {
         collection.clear();
+    }
+
+    public void write(NbtCompound nbt) {
+        NbtList nbtList = new NbtList();
+
+        for(int i = 0; i < collection.size(); ++i) {
+            ItemStack itemStack = collection.get(i);
+            if (!itemStack.isEmpty()) {
+                NbtCompound nbtCompound = new NbtCompound();
+                nbtCompound.putByte("Slot", (byte)i);
+                itemStack.writeNbt(nbtCompound);
+                nbtList.add(nbtCompound);
+            }
+        }
+
+        nbt.put("Items", nbtList);
+    }
+
+    public void read(NbtCompound nbt) {
+        NbtList nbtList = nbt.getList("Items", 10);
+
+        for(int i = 0; i < nbtList.size(); ++i) {
+            NbtCompound nbtCompound = nbtList.getCompound(i);
+            int j = nbtCompound.getByte("Slot") & 255;
+            if (j < collection.size()) {
+                collection.set(j, ItemStack.fromNbt(nbtCompound));
+            }
+        }
     }
 }

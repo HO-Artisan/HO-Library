@@ -4,9 +4,9 @@ import ho.artisan.holib.common.blockentity.HBlockEntity;
 import ho.artisan.holib.common.blockentity.data.DataList;
 import ho.artisan.holib.common.blockentity.data.StoreList;
 import ho.artisan.holib.common.blockentity.extra.ISaveToBlock;
-import ho.artisan.holib.init.HOBlockEntityTypes;
 import net.fabricmc.fabric.api.transfer.v1.item.InventoryStorage;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.nbt.NbtCompound;
@@ -25,8 +25,8 @@ public class HOTile extends HBlockEntity implements NamedScreenHandlerFactory, I
     public final InventoryStorage inventoryWrapper = InventoryStorage.of(store, null);
 
 
-    public HOTile(BlockPos pos, BlockState state) {
-        super(HOBlockEntityTypes.HO_BLOCK_ENTITY, pos, state);
+    public HOTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class HOTile extends HBlockEntity implements NamedScreenHandlerFactory, I
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new HOScreenHandler(syncId, playerInventory, store, data);
+        throw new AssertionError();
     }
 
     @Override

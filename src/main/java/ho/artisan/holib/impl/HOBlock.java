@@ -1,7 +1,6 @@
 package ho.artisan.holib.impl;
 
 import ho.artisan.holib.common.block.HBlockWithEntity;
-import ho.artisan.holib.init.HOBlockEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -21,7 +20,7 @@ public class HOBlock extends HBlockWithEntity<HOTile> {
 
     @Override
     public BlockEntityType<HOTile> getBlockEntityType() {
-        return HOBlockEntityTypes.HO_BLOCK_ENTITY;
+        throw new AssertionError();
     }
 
     @Override
@@ -39,6 +38,6 @@ public class HOBlock extends HBlockWithEntity<HOTile> {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new HOTile(pos, state);
+        throw new AssertionError();
     }
 }

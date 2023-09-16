@@ -76,6 +76,26 @@ public class DataList {
         public void set(int value) {
             valueList.set(index, value);
         }
+
+        public void plus(int value) {
+            set(get() + value);
+        }
+
+        public void minus(int value) {
+            set(get() - value);
+        }
+
+        public void times(int value) {
+            set(get() * value);
+        }
+
+        public void inc() {
+            plus(1);
+        }
+
+        public void dec() {
+            minus(1);
+        }
     }
 
     public PropertyDelegate delegate() {
