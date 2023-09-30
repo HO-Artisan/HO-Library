@@ -1,4 +1,4 @@
-package ho.artisan.holib.tool;
+package ho.artisan.holib.tool.old;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Block;
@@ -21,11 +21,12 @@ import net.minecraft.util.Identifier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Registrar {
+@Deprecated
+public class OldRegistrar {
     private final String modid;
     private final List<ItemStack> itemGroup;
 
-    public Registrar(String modid) {
+    public OldRegistrar(String modid) {
         this.modid = modid.toLowerCase();
         this.itemGroup = new ArrayList<>();
     }

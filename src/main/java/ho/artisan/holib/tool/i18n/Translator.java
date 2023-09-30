@@ -1,4 +1,4 @@
-package ho.artisan.holib.tool;
+package ho.artisan.holib.tool.i18n;
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.item.Item;
