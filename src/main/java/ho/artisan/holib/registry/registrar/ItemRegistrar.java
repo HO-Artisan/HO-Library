@@ -13,7 +13,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ItemRegistrar extends Registrar<Item> {
-    public final List<RegistryObject<? extends Item>> list = new ArrayList<>();
+    private final List<RegistryObject<? extends Item>> list = new ArrayList<>();
 
     public ItemRegistrar(String modid) {
         super(modid, Registries.ITEM);
@@ -42,4 +42,7 @@ public class ItemRegistrar extends Registrar<Item> {
         return function(id, (settings -> new BlockItem(block.get(), settings)));
     }
 
+    public List<RegistryObject<? extends Item>> list() {
+        return list;
+    }
 }

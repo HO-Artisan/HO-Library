@@ -14,7 +14,6 @@ public class HOLibMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
         LOGGER.info(MOD_NAME + " has set up!");
     }
 }
