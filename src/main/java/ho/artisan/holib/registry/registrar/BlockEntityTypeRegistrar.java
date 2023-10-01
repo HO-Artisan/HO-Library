@@ -1,7 +1,7 @@
 package ho.artisan.holib.registry.registrar;
 
 import ho.artisan.holib.registry.Registrar;
-import ho.artisan.holib.registry.RegistryObject;
+import ho.artisan.holib.registry.RegistryCasket;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
@@ -14,7 +14,7 @@ public class BlockEntityTypeRegistrar extends Registrar<BlockEntityType<?>> {
     }
 
 
-    public <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(
+    public <T extends BlockEntity> RegistryCasket<BlockEntityType<T>> register(
             String id,
             FabricBlockEntityTypeBuilder.Factory<T> factory,
             Block... blocks) {

@@ -6,11 +6,11 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class RegistryObject<T> implements Supplier<T> {
+public class RegistryCasket<T> implements Supplier<T> {
     private final T object;
     private final Identifier id;
 
-    public RegistryObject(T object, Identifier id) {
+    public RegistryCasket(T object, Identifier id) {
         this.object = object;
         this.id = id;
     }
@@ -44,7 +44,7 @@ public class RegistryObject<T> implements Supplier<T> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof RegistryObject<?> that)) return false;
+        if (!(o instanceof RegistryCasket<?> that)) return false;
         return Objects.equals(object, that.object) && Objects.equals(id, that.id);
     }
 

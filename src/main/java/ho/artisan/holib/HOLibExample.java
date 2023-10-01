@@ -1,7 +1,7 @@
 package ho.artisan.holib;
 
 
-import ho.artisan.holib.registry.RegistryObject;
+import ho.artisan.holib.registry.RegistryCasket;
 import ho.artisan.holib.registry.registrar.BlockEntityTypeRegistrar;
 import ho.artisan.holib.registry.registrar.BlockRegistrar;
 import ho.artisan.holib.registry.registrar.ItemGroupRegistrar;
@@ -16,10 +16,10 @@ import net.minecraft.item.ItemStack;
 import static ho.artisan.holib.HOLibMod.MOD_ID;
 
 public class HOLibExample {
-    public static final RegistryObject<Block> IRON_COAL_BLOCK;
+    public static final RegistryCasket<Block> IRON_COAL_BLOCK;
 
-    public static final RegistryObject<BlockItem> IRON_COAL_BLOCK_ITEM;
-    public static final RegistryObject<Item> IRON_COAL;
+    public static final RegistryCasket<BlockItem> IRON_COAL_BLOCK_ITEM;
+    public static final RegistryCasket<Item> IRON_COAL;
 
     public static final ItemGroup MAIN;
 

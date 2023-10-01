@@ -1,7 +1,7 @@
 package ho.artisan.holib.registry.registrar;
 
 import ho.artisan.holib.registry.Registrar;
-import ho.artisan.holib.registry.RegistryObject;
+import ho.artisan.holib.registry.RegistryCasket;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,14 +16,14 @@ public class ItemGroupRegistrar extends Registrar<ItemGroup> {
         super(modid, Registries.ITEM_GROUP);
     }
 
-    public RegistryObject<ItemGroup> register(String id, List<RegistryObject<? extends Item>> list) {
+    public RegistryCasket<ItemGroup> register(String id, List<RegistryCasket<? extends Item>> list) {
         var builder = FabricItemGroup.builder()
                 .displayName(Text.translatable("itemGroup." + this.modid + "." + id))
                 .entries((displayContext, entries) -> list.forEach(item -> entries.add(item::get)));
         return super.register(id, builder.build());
     }
 
-    public RegistryObject<ItemGroup> register(String id, List<RegistryObject<? extends Item>> list, Consumer<ItemGroup.Builder> consumer) {
+    public RegistryCasket<ItemGroup> register(String id, List<RegistryCasket<? extends Item>> list, Consumer<ItemGroup.Builder> consumer) {
         var builder = FabricItemGroup.builder()
                 .displayName(Text.translatable("itemGroup." + this.modid + "." + id))
                 .entries((displayContext, entries) -> list.forEach(item -> entries.add(item::get)));

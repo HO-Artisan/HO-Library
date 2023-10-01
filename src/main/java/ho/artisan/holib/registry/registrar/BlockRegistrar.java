@@ -1,7 +1,7 @@
 package ho.artisan.holib.registry.registrar;
 
 import ho.artisan.holib.registry.Registrar;
-import ho.artisan.holib.registry.RegistryObject;
+import ho.artisan.holib.registry.RegistryCasket;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
@@ -13,7 +13,7 @@ public class BlockRegistrar extends Registrar<Block> {
         super(modid, Registries.BLOCK);
     }
 
-    public <T extends Block> RegistryObject<T> function(String id, Function<AbstractBlock.Settings, T> blockFunction, Block copy) {
+    public <T extends Block> RegistryCasket<T> function(String id, Function<AbstractBlock.Settings, T> blockFunction, Block copy) {
         return super.register(id, blockFunction.apply(AbstractBlock.Settings.copy(copy)));
     }
 }
