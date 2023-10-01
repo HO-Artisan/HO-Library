@@ -1,6 +1,7 @@
 package ho.artisan.holib;
 
-import ho.artisan.holib.registry.registrar.RegistryObject;
+
+import ho.artisan.holib.registry.RegistryObject;
 import ho.artisan.holib.registry.registrar.BlockEntityTypeRegistrar;
 import ho.artisan.holib.registry.registrar.BlockRegistrar;
 import ho.artisan.holib.registry.registrar.ItemGroupRegistrar;

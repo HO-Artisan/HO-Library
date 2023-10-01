@@ -4,9 +4,14 @@
   "version": "${version}",
   "name": "HO-Library",
   "description": "",
-  "authors": ["Chemiofitor"],
+  "authors": [
+    "Chemiofitor"
+  ],
   "contact": {
-    "repo": "https://github.com/HO-Artisan/HO-Library"
+    "repo": "https://github.com/HO-Artisan/HO-Library",
+    "issues": "https://github.com/HO-Artisan/HO-Library/issues",
+    "homepage": "https://modrinth.com/mod/ho-library",
+    "email": "783626185@qq.com"
   },
   "license": "MIT",
   "icon": "assets/holib/icon.png",

@@ -1,5 +1,7 @@
 package ho.artisan.holib.registry.registrar;
 
+import ho.artisan.holib.registry.Registrar;
+import ho.artisan.holib.registry.RegistryObject;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;

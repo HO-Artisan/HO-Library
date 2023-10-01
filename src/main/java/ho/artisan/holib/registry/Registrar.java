@@ -1,4 +1,4 @@
-package ho.artisan.holib.registry.registrar;
+package ho.artisan.holib.registry;
 
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
