@@ -17,7 +17,7 @@ public class Registrar<T> {
     }
 
     public <K extends T> RegistryCasket<K> register(String id, K object) {
-        return new RegistryCasket<>(Registry.register(registry, id, object), genID(id));
+        return new RegistryCasket<>(Registry.register(registry, new Identifier(modid, id), object), genID(id));
     }
 
     public Identifier genID(String path) {
