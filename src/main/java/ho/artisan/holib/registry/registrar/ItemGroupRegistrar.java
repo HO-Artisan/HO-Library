@@ -1,7 +1,5 @@
 package ho.artisan.holib.registry.registrar;
 
-import ho.artisan.holib.registry.Registrar;
-import ho.artisan.holib.registry.RegistryObject;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

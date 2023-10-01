@@ -1,6 +1,8 @@
 package ho.artisan.holib;
 
 import ho.artisan.holib.registry.registrar.ItemRegistrar;
+import ho.artisan.holib.registry.registration.RegistrationExample;
+import ho.artisan.holib.registry.registration.RegistrationResolver;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,7 @@ public class HOLibMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        RegistrationResolver.process(RegistrationExample.class);
         LOGGER.info(MOD_NAME + " has set up!");
     }
 }

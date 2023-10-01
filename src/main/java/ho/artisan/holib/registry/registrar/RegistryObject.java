@@ -1,4 +1,4 @@
-package ho.artisan.holib.registry;
+package ho.artisan.holib.registry.registrar;
 
 import net.minecraft.util.Identifier;
 
@@ -15,6 +15,10 @@ public class RegistryObject<T> implements Supplier<T> {
         this.id = id;
     }
 
+    public boolean is(T object) {
+        return this.object == object;
+    }
+
     @Override
     public T get() {
         return object;
@@ -22,6 +26,10 @@ public class RegistryObject<T> implements Supplier<T> {
 
     public <K> K act(Function<T, K> function) {
         return function.apply(object);
+    }
+
+    public <K> Supplier<K> supplier(Function<T, K> function) {
+        return () -> function.apply(object);
     }
 
     public Identifier id() {

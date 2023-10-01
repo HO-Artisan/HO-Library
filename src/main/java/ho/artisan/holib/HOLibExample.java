@@ -1,6 +1,6 @@
 package ho.artisan.holib;
 
-import ho.artisan.holib.registry.RegistryObject;
+import ho.artisan.holib.registry.registrar.RegistryObject;
 import ho.artisan.holib.registry.registrar.BlockEntityTypeRegistrar;
 import ho.artisan.holib.registry.registrar.BlockRegistrar;
 import ho.artisan.holib.registry.registrar.ItemGroupRegistrar;
@@ -36,7 +36,7 @@ public class HOLibExample {
         ItemGroupRegistrar itemGroupRegistrar = new ItemGroupRegistrar(MOD_ID);
 
         MAIN = itemGroupRegistrar.register("main", itemRegistrar.list(), itemGroup -> {
-            itemGroup.icon(() -> IRON_COAL.act(ItemStack::new));
+            itemGroup.icon(IRON_COAL.supplier(ItemStack::new));
         }).get();
     }
 }
