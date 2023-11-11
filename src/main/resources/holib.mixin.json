@@ -1,9 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "ho.artisan.holib.mixin",
+  "package": "ho.artisan.lib.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [],
+  "mixins": [
+    "ItemSettingMixin"
+  ],
   "client": [],
   "server": [],
   "injectors": {

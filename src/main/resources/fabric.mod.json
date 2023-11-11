@@ -10,26 +10,18 @@
   "contact": {
     "repo": "https://github.com/HO-Artisan/HO-Library",
     "issues": "https://github.com/HO-Artisan/HO-Library/issues",
-    "homepage": "https://modrinth.com/mod/ho-library",
-    "email": "783626185@qq.com"
+    "homepage": "https://modrinth.com/mod/ho-library"
   },
   "license": "MIT",
   "icon": "assets/holib/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "ho.artisan.holib.HOLibClient"
-    ],
     "main": [
-      "ho.artisan.holib.HOLibMod"
-    ],
-    "fabric-datagen": [
-      "ho.artisan.holib.HOLibDataGen"
+      "ho.artisan.lib.HOLibrary"
     ]
   },
   "depends": {
-    "fabric": "*",
-    "minecraft": ">=1.19.3"
+    "fabric": "*"
   },
   "custom": {
     "modmenu": {
